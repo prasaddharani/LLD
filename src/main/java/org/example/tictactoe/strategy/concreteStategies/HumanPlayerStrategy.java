@@ -8,8 +8,8 @@ import org.example.tictactoe.utility.Position;
 import java.util.Scanner;
 
 public class HumanPlayerStrategy implements PlayerStrategy {
-    private Scanner scanner;
-    private String playerName;
+    private final Scanner scanner;
+    private final String playerName;
 
     public HumanPlayerStrategy(String playerName) {
         this.playerName = playerName;
@@ -20,6 +20,7 @@ public class HumanPlayerStrategy implements PlayerStrategy {
     public Position makeMove(Board board) {
         Position position;
         while (true) {
+            System.out.println(playerName + ": ");
             int row = scanner.nextInt();
             int col = scanner.nextInt();
             position = new Position(row, col);
