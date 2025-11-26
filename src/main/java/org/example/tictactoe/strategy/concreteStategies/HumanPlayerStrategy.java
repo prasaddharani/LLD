@@ -11,19 +11,22 @@ public class HumanPlayerStrategy implements PlayerStrategy {
     private Scanner scanner;
     private String playerName;
 
-    HumanPlayerStrategy(String playerName) {
+    public HumanPlayerStrategy(String playerName) {
         this.playerName = playerName;
         this.scanner = new Scanner(System.in);
     }
 
     @Override
     public Position makeMove(Board board) {
-        Position position = null;
+        Position position;
         while (true) {
             int row = scanner.nextInt();
-            int cold = scanner.nextInt();
-
-            if (board)
+            int col = scanner.nextInt();
+            position = new Position(row, col);
+            if (board.isValidMove(position)) {
+                return position;
+            }
+            System.out.println("Invalid move. Try again.");
         }
     }
 }

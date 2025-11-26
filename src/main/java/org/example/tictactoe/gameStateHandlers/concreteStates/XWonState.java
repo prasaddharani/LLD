@@ -2,6 +2,7 @@ package org.example.tictactoe.gameStateHandlers.concreteStates;
 
 import org.example.tictactoe.gameStateHandlers.GameState;
 import org.example.tictactoe.gameStateHandlers.context.GameContext;
+import org.example.tictactoe.utility.Player;
 
 public class XWonState implements GameState {
     @Override

@@ -2,11 +2,12 @@ package org.example.tictactoe.gameStateHandlers.context;
 
 import org.example.tictactoe.gameStateHandlers.GameState;
 import org.example.tictactoe.gameStateHandlers.concreteStates.XTurnState;
+import org.example.tictactoe.utility.Player;
 
 public class GameContext {
     private GameState currentState;
 
-    GameContext(GameState currentState) {
+    public GameContext() {
         this.currentState = new XTurnState();
     }
 
@@ -23,7 +24,7 @@ public class GameContext {
     }
 
     public boolean isGameOver () {
-        return this.isGameOver();
+        return currentState.isGameOver();
     }
 
 }
