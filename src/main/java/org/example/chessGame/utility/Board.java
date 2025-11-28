@@ -10,7 +10,7 @@ public class Board {
         initializeBoard(rows);
     }
 
-    public Board getInstance(int rows) {
+    public static Board getInstance(int rows) {
         if (instance == null) {
             instance = new Board(rows);
         }
@@ -47,5 +47,12 @@ public class Board {
         for (int col = 0; col < rows; col++) {
             board[row][col] = new Cell(row, col, PieceFactory.getPiece("pawn", isWhite));
         }
+    }
+
+    public Cell getCell(int row, int col) {
+        if (row >= 0 && row < board.length && col >= 0 && col < board.length) {
+            return board[row][col];
+        }
+        return null;
     }
 }

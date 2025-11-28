@@ -22,6 +22,10 @@ public abstract class Piece {
         return isKilled;
     }
 
+    public void setKilled(boolean killed) {
+        this.setKilled(killed);
+    }
+
     public boolean canMove(Board board, Cell startCell, Cell endCell) {
         return movementStrategy.canMove(board, startCell, endCell);
     }
