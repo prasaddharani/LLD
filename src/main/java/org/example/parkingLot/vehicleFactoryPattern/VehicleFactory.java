@@ -7,7 +7,7 @@ import org.example.parkingLot.vehicleFactoryPattern.concreteVehicles.OtherVehicl
 
 public class VehicleFactory {
 
-    public Vehicle createVehicle(String vehicleType, String licensePlate, ParkingFeeStrategy parkingFeeStrategy) {
+    public static Vehicle createVehicle(String vehicleType, String licensePlate, ParkingFeeStrategy parkingFeeStrategy) {
         if ("car".equalsIgnoreCase(vehicleType)) {
             return new CarVehicle(vehicleType, licensePlate, parkingFeeStrategy);
         } else if ("bike".equalsIgnoreCase(vehicleType)) {
