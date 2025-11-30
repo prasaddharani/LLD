@@ -2,6 +2,7 @@ package org.example.logging;
 
 import org.example.logging.enums.LogLevel;
 
+import java.time.Instant;
 import java.util.Collections;
 import java.util.Map;
 
@@ -12,10 +13,10 @@ public class LogMessage {
     private final Map<String, String> metaData;
 
 
-    public LogMessage(LogLevel logLevel, String message, long timestamp, Map<String, String> metaData) {
+    public LogMessage(LogLevel logLevel, String message, Map<String, String> metaData) {
         this.logLevel = logLevel;
         this.message = message;
-        this.timestamp = timestamp;
+        this.timestamp = Instant.now().getEpochSecond();
         this.metaData = metaData == null? Collections.emptyMap(): Map.copyOf(metaData);
     }
 
