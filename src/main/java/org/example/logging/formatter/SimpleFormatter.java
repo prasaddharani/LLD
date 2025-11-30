@@ -17,6 +17,6 @@ public class SimpleFormatter implements Formatter{
                 logMessage.getLogLevel(),
                 Thread.currentThread().getName(),
                 logMessage.getMessage()
-                )
+                );
     }
 }
