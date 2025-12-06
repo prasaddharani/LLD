@@ -20,7 +20,7 @@ public class InventoryManager {
         this.replenishmentStrategy = replenishmentStrategy;
     }
 
-    public InventoryManager getInstance(ReplenishmentStrategy replenishmentStrategy) {
+    public static InventoryManager getInstance(ReplenishmentStrategy replenishmentStrategy) {
         if (INSTANCE == null) {
             synchronized (InventoryManager.class) {
                 if (INSTANCE == null) {
