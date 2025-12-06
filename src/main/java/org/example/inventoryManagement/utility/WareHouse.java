@@ -92,4 +92,8 @@ public class WareHouse {
         }
         return 0;
     }
+
+    public Product getProductBySku(String sku) {
+        return products.get(sku);
+    }
 }
