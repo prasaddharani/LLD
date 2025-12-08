@@ -18,7 +18,7 @@ public abstract class Vehicle {
         this.baseRentalPrice = baseRentalPrice;
     }
 
-    protected abstract double calculateRentalFee(int days);
+    public abstract double calculateRentalFee(int days);
 
     public void setStatus(VehicleStatus status) {
         this.status = status;
