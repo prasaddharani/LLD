@@ -22,8 +22,8 @@ public class RentalStore {
         this.vehicles = new HashMap<>();
     }
 
-    public void addVehicle(String registrationNumber, Vehicle vehicle) {
-        vehicles.put(registrationNumber, vehicle);
+    public void addVehicle(Vehicle vehicle) {
+        vehicles.put(vehicle.getRegistrationNumber(), vehicle);
     }
 
     public void removeVehicle(String registrationNumber) {
@@ -47,6 +47,10 @@ public class RentalStore {
 
     public Vehicle getVehicle(String registrationNumber) {
         return vehicles.get(registrationNumber);
+    }
+
+    public Map<String, Vehicle> getAllVehicles() {
+        return vehicles;
     }
 
     public int getId() {

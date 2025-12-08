@@ -7,7 +7,7 @@ import org.example.carRentalSystems.vehicleFactory.concreteVehicles.SUVVehicle;
 
 public class VehicleFactory {
 
-    public Vehicle createVehicle(String registrationNumber, String model, VehicleType type, double baseRentalPrice) {
+    public static Vehicle createVehicle(String registrationNumber, String model, VehicleType type, double baseRentalPrice) {
         return switch (type) {
             case SUV -> new SUVVehicle(registrationNumber, model, type, baseRentalPrice);
             case ECONOMY -> new EconomyVehicle(registrationNumber, model, type, baseRentalPrice);
