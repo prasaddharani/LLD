@@ -12,19 +12,19 @@ public class Reservation {
     private User user;
     private Vehicle vehicle;
     private RentalStore pickupStore;
-    private RentalStore rentalStore;
+    private RentalStore returnStore;
     private Date startDate;
     private Date endDate;
     private ReservationStatus status;
     private double totalAmount;
 
 
-    public Reservation(int id, User user, Vehicle vehicle, RentalStore pickupStore, RentalStore rentalStore, Date startDate, Date endDate) {
+    public Reservation(int id, User user, Vehicle vehicle, RentalStore pickupStore, RentalStore returnStore, Date startDate, Date endDate) {
         this.id = id;
         this.user = user;
         this.vehicle = vehicle;
         this.pickupStore = pickupStore;
-        this.rentalStore = rentalStore;
+        this.returnStore = returnStore;
         this.startDate = startDate;
         this.endDate = endDate;
         this.status = ReservationStatus.PENDING;
