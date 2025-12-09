@@ -130,4 +130,18 @@ public class VendingMachineContext {
         }
         return balance;
     }
+
+    // Updates the inventory by adding a new item
+    public void updateInventory(Item item, int codeNumber) {
+        if (currentState instanceof IdleState) { // Only update inventory in Idle state
+            try {
+                inventory.addItem(item, codeNumber); // Add the item to inventory
+                System.out.println("Added " + item.getType() + " to slot " + codeNumber);
+            } catch (Exception e) {
+                System.out.println("Error updating inventory: " + e.getMessage());
+            }
+        } else {
+            System.out.println("Inventory can only be updated in Idle state");
+        }
+    }
 }
