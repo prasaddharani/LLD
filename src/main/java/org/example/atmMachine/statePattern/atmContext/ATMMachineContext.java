@@ -6,6 +6,7 @@ import org.example.atmMachine.statePattern.ATMState;
 import org.example.atmMachine.statePattern.atmFactory.ATMStateFactory;
 import org.example.atmMachine.statePattern.concreteAtmStates.HasCardState;
 import org.example.atmMachine.statePattern.concreteAtmStates.IdleState;
+import org.example.atmMachine.statePattern.concreteAtmStates.SelectOperationState;
 import org.example.atmMachine.statePattern.concreteAtmStates.TransactionState;
 import org.example.atmMachine.utilityClasses.ATMInventory;
 import org.example.atmMachine.utilityClasses.Account;
@@ -148,5 +149,20 @@ public class ATMMachineContext {
 
     public TransactionType getTransactionType() {
         return transactionType;
+    }
+
+    public void returnCard() {
+        if (currentState instanceof HasCardState
+                || currentState instanceof SelectOperationState
+                || currentState instanceof TransactionState) {
+            System.out.println("Card returned to customer");
+            resetATM();
+        } else {
+            System.out.println("No card to return in " + currentState.getStateName());
+        }
+    }
+
+    public void addAccount(Account account) {
+        accounts.put(account.getAccountNumber(), account);
     }
 }
