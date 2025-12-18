@@ -66,3 +66,12 @@ public class Main {
         }
     }
 }
+
+/**
+
+EXPENSE u1 1200 4 u1 u2 u3 u4 EQUAL
+        SHOW
+User2 owes User1: 300.0
+User3 owes User1: 300.0
+User4 owes User1: 300.0
+**/

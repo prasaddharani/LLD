@@ -13,7 +13,7 @@ public class SUVVehicle extends Vehicle {
 
 
     @Override
-    protected double calculateRentalFee(int days) {
+    public double calculateRentalFee(int days) {
         return days * RATE_MULTIPLIER * getBaseRentalPrice();
     }
 }

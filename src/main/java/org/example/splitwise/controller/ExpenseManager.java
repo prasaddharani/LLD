@@ -64,9 +64,9 @@ public class ExpenseManager {
 
     public void showBalances() {
         boolean isEmpty = true;
-        for (Map.Entry<String, Map<String, Double>> allBalances: balanceSheet.entrySet()) {
-            for (Map.Entry<String, Double> userBalance: balanceSheet.get(allBalances.getKey()).entrySet()) {
-                if (userBalance.getValue() != 0) {
+        for (Map.Entry<String, Map<String, Double>> allBalances : balanceSheet.entrySet()) {
+            for (Map.Entry<String, Double> userBalance : allBalances.getValue().entrySet()) {
+                if (userBalance.getValue() > 0) {
                     isEmpty = false;
                     printBalance(allBalances.getKey(), userBalance.getKey(), userBalance.getValue());
                 }
@@ -74,7 +74,7 @@ public class ExpenseManager {
         }
 
         if (isEmpty) {
-            System.out.println("No Balances");
+            System.out.println("No balances");
         }
     }
 
