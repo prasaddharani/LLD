@@ -12,8 +12,7 @@ public abstract class Expense {
     private List<Split> splits;
     private ExpenseMetaData metaData;
 
-    public Expense(String id, double amount, User paidBy, List<Split> splits, ExpenseMetaData metaData) {
-        this.id = id;
+    public Expense(double amount, User paidBy, List<Split> splits, ExpenseMetaData metaData) {
         this.amount = amount;
         this.paidBy = paidBy;
         this.splits = splits;
