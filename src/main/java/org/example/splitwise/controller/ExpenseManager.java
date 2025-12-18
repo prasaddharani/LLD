@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class ExpenseManager {
     List<Expense> expenses;
-    Map<String, User> userMap;
+    public Map<String, User> userMap;
     Map<String, Map<String, Double>> balanceSheet;
 
     public ExpenseManager() {
