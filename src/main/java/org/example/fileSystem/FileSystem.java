@@ -84,14 +84,14 @@ public class FileSystem {
 
     public boolean setFileContent(String path, String content) {
         FileSystemNode node = getNode(path);
-        if (node == null || node.isFile()) {
+        if (node == null || !node.isFile()) {
             return false;
         }
         ((FileNode) node).setContent(content);
         return true;
     }
 
-    public String getContent(String path) {
+    public String getFileContent(String path) {
         FileSystemNode node = getNode(path);
         if (node == null || !node.isFile()) {
             return null;
